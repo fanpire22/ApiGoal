@@ -1,0 +1,16 @@
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.deps.json
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.runtimeconfig.json
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.runtimeconfig.dev.json
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.dll
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.csprojAssemblyReference.cache
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.csproj.CoreCompileInputs.cache
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.RazorAssemblyInfo.cache
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.RazorAssemblyInfo.cs
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.AssemblyInfoInputs.cache
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.AssemblyInfo.cs
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.RazorTargetAssemblyInfo.cache
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.pdb
+D:\Repo\ApiGoal\bin\Debug\netcoreapp2.1\ApiGoal.xml
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.dll
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.xml
+D:\Repo\ApiGoal\obj\Debug\netcoreapp2.1\ApiGoal.pdb

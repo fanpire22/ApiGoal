@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiGoal</name>
+    </assembly>
+    <members>
+        <member name="M:ApiGoal.Controllers.ValuesController.GetObsolete">
+            <summary>
+            Obtenemos aquellos objetos que estén caducados, es decir, cuya fecha de caducidad sea inferior o igual al dia actual.
+            </summary>
+            <remarks>
+            Se obtendrá una lista de objetos como el siguiente:
+                {
+                   "nombre": C00A11,
+                   "Caducidad": "02/10/2018",
+                   "tipo": "Agua de Solar de Cabrales",
+                   "pvp": 100.50
+                }
+            </remarks>
+        </member>
+        <member name="M:ApiGoal.Controllers.ValuesController.GetEliminados">
+            <summary>
+            Obtenemos aquellos objetos que hayan sido eliminados del inventariado. Una vez se han obtenido, se limpia el buffer de eliminados
+            </summary>
+            <remarks>
+            Se obtendrá una lista de objetos como el siguiente:
+                {
+                   "nombre": C00A10,
+                   "Caducidad": "02/10/2018",
+                   "tipo": "Agua de Solar de Cabrales",
+                   "pvp": 100.50
+                }
+            </remarks>
+        </member>
+        <member name="M:ApiGoal.Controllers.ValuesController.Put(System.String,System.String,System.String,System.String)">
+             <summary>
+             Introducimos un objeto dentro del inventario
+             </summary>
+             <param name="nombre">Identificador único. No puede repetirse con uno ya existente</param>
+             <param name="caducidad">Fecha de caducidad en formato DD/MM/AAAA</param>
+             <param name="tipo">Tipo del objeto de inventario</param>
+             <param name="pvp">Precio en formato String (decimales con puntos)</param>
+             <remarks>
+             Solicitud de ejemplo:
+            
+                 PUT /nombre
+                 {
+                    "nombre": C00A12,
+                    "Caducidad": "02/10/2020",
+                    "tipo": "Agua de Solar de Cabrales",
+                    "pvp": 100.50
+                 }
+            
+             </remarks>
+             <response code="201">Se ha generado correctamente el objeto y se ha integrado en el inventario</response>
+             <response code="208">El objeto ya existía previamente en el inventario</response>
+             <response code="412">Ha ocurrido un error: O bien el PVP no tenía el decimal correcto o bien la fecha no seguía el formato esperado</response>
+        </member>
+        <member name="M:ApiGoal.Controllers.ValuesController.Delete(System.String)">
+             <summary>
+             Eliminamos un objeto del inventario por nombre.
+             </summary>
+             <param name="nombre">Identificador único. No puede repetirse</param>
+             <remarks>
+             Solicitud de ejemplo:
+            
+                 DELETE /nombre
+                 {
+                    "nombre": C00A12
+                 }
+            
+             </remarks>
+             <response code="201">Se ha eliminado correctamente el objeto</response>
+             <response code="412">Ha ocurrido un error: El objeto no existía en el inventario</response>
+        </member>
+        <member name="T:ApiGoal.Models.clsInventario">
+            <summary>
+            Objeto de inventario utilizado para introducir objetos en la lista global de inventariado
+            </summary>
+        </member>
+        <member name="P:ApiGoal.Models.clsInventario.Caducado">
+            <summary>
+            Con esta función determinamos si un elemento está caducado o no.
+            </summary>
+        </member>
+        <member name="T:ApiGoal.Models.clsInventarioMaestro">
+            <summary>
+            Singleton que emula los datos que se encontrarían en Base de Datos
+            </summary>
+        </member>
+        <member name="M:ApiGoal.Models.clsInventarioMaestro.Add(ApiGoal.Models.clsInventario)">
+            <summary>
+            Función que añade un nuevo objeto al inventario, si no existía en la lista previamente
+            </summary>
+            <param name="objeto">Objeto a añadir</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGoal.Models.clsInventarioMaestro.Remove(System.String)">
+            <summary>
+            Función que elimina un objeto del inventario, y lo añade a la lista de notificación de eliminados
+            </summary>
+            <param name="nombre">Identificación del objeto a eliminar</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGoal.Models.clsInventarioMaestro.GetRemoved">
+            <summary>
+            Función que devuelve la lista de notificación de eliminados y la limpia (para evitar notificaciones redundantes)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGoal.Models.clsInventarioMaestro.GetObsolete">
+            <summary>
+            Función que devuelve qué objetos del inventario están obsoletos. Usamos un LinQ por simplicidad de código.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
