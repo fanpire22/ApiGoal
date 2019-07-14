@@ -4,7 +4,7 @@
         <name>ApiGoal</name>
     </assembly>
     <members>
-        <member name="M:ApiGoal.Controllers.ValuesController.GetObsolete">
+        <member name="M:ApiGoal.Controllers.clsControlValores.GetObsolete">
             <summary>
             Obtenemos aquellos objetos que estén caducados, es decir, cuya fecha de caducidad sea inferior o igual al dia actual.
             </summary>
@@ -17,8 +17,10 @@
                    "pvp": 100.50
                 }
             </remarks>
+            <response code="201">Se han obtenido los datos sin problemas, y se ha limpiado la lista</response>
+            <response code="412">Ha ocurrido un error (Excepción)</response>
         </member>
-        <member name="M:ApiGoal.Controllers.ValuesController.GetEliminados">
+        <member name="M:ApiGoal.Controllers.clsControlValores.GetEliminados">
             <summary>
             Obtenemos aquellos objetos que hayan sido eliminados del inventariado. Una vez se han obtenido, se limpia el buffer de eliminados
             </summary>
@@ -31,8 +33,10 @@
                    "pvp": 100.50
                 }
             </remarks>
+            <response code="201">Se han obtenido los datos correctamente</response>
+            <response code="412">Ha ocurrido un error (Excepción)</response>
         </member>
-        <member name="M:ApiGoal.Controllers.ValuesController.Put(System.String,System.String,System.String,System.String)">
+        <member name="M:ApiGoal.Controllers.clsControlValores.Put(System.String,System.String,System.String,System.String)">
              <summary>
              Introducimos un objeto dentro del inventario
              </summary>
@@ -56,7 +60,7 @@
              <response code="208">El objeto ya existía previamente en el inventario</response>
              <response code="412">Ha ocurrido un error: O bien el PVP no tenía el decimal correcto o bien la fecha no seguía el formato esperado</response>
         </member>
-        <member name="M:ApiGoal.Controllers.ValuesController.Delete(System.String)">
+        <member name="M:ApiGoal.Controllers.clsControlValores.Delete(System.String)">
              <summary>
              Eliminamos un objeto del inventario por nombre.
              </summary>
